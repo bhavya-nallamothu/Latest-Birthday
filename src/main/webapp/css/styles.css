@@ -1,0 +1,89 @@
+
+html,body{height:100%;margin:0;background:#0a0010;font-family:Arial;color:white;overflow:hidden}
+
+/* SORRY text */
+.label{
+  font-size:70px;
+  font-weight:900;
+  letter-spacing:10px;
+  color:#ff88ee;
+  text-shadow:0 0 25px #ff00aa;
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+}
+
+/* SMALLER heart */
+.heart-btn{background:transparent;border:0;cursor:pointer;padding:0;margin:0}
+.heart{
+  width:280px;
+  height:240px;
+  position:relative;
+  transform:rotate(-45deg);
+  background:linear-gradient(145deg,#ff0088,#bb0055,#880040);
+  border-radius:55px 55px 0 0;
+  box-shadow:0 0 40px rgba(255,0,140,0.7);
+  animation:beat 1.5s infinite ease-in-out;
+}
+.heart:before,.heart:after{
+  content:"";
+  position:absolute;
+  width:280px;height:240px;
+  background:inherit;border-radius:50%;
+}
+.heart:before{top:-120px;left:0}
+.heart:after{top:0;left:120px}
+
+@keyframes beat{
+  0%{transform:rotate(-45deg) scale(1)}
+  30%{transform:rotate(-45deg) scale(1.15)}
+  60%{transform:rotate(-45deg) scale(0.92)}
+  100%{transform:rotate(-45deg) scale(1)}
+}
+
+/* DARK GREEN LOVE-SHAPED BACKGROUND HEARTS */
+.bg-hearts{position:absolute;inset:0;overflow:hidden;z-index:0}
+.bg-hearts .gheart{
+  position:absolute;
+  width:30px;height:26px;
+  transform:rotate(-45deg);
+  background:linear-gradient(145deg,#00aa44,#006622);
+  border-radius:8px 8px 0 0;
+  opacity:0.9;
+  animation:float linear infinite;
+}
+.bg-hearts .gheart:before,
+.bg-hearts .gheart:after{
+  content:"";
+  position:absolute;
+  width:30px;height:30px;
+  background:inherit;
+  border-radius:50%;
+  top:-15px;left:0;
+}
+.bg-hearts .gheart:after{left:15px}
+
+@keyframes float{
+  0%{transform:translateY(110vh) rotate(-45deg)}
+  100%{transform:translateY(-40vh) rotate(-45deg)}
+}
+
+/* MISS U */
+.missu{
+  position:fixed;
+  top:10%;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:50px;
+  font-weight:900;
+  color:#ff3333;
+  opacity:0;
+  transition:.4s;
+}
+.missu.show{opacity:1}
+
+.stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+.center{position:relative;z-index:2;text-align:center}
