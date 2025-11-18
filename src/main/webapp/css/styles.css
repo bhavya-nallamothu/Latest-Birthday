@@ -1,0 +1,91 @@
+
+html,body{height:100%;margin:0;background:#0d0010;font-family:Arial;color:white;overflow:hidden}
+
+.label{
+  font-size:70px;
+  font-weight:900;
+  letter-spacing:10px;
+  color:#ff66dd; /* BRIGHT VISIBLE PINK */
+  text-shadow:0 0 18px #ff0095,0 0 30px #ff0095;
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+}
+
+.heart-btn{background:transparent;border:0;cursor:pointer;padding:0;outline:none}
+
+.heart{
+  width:380px;
+  height:340px;
+  position:relative;
+  transform:rotate(-45deg);
+  background:linear-gradient(145deg,#ff0088 0%, #cc0066 40%, #99004d 100%); /* DARK PINK */
+  border-radius:60px 60px 0 0;
+  box-shadow:0 0 50px rgba(255,0,140,0.7), inset 0 -15px 40px rgba(255,255,255,0.1);
+  animation:heartbeat 1.6s infinite ease-in-out;
+}
+
+.heart:before,.heart:after{
+  content:"";
+  position:absolute;
+  width:380px;
+  height:340px;
+  background:inherit;
+  border-radius:50%;
+}
+
+.heart:before{top:-170px;left:0}
+.heart:after{top:0;left:180px}
+
+@keyframes heartbeat{
+  0%{transform:rotate(-45deg) scale(1)}
+  30%{transform:rotate(-45deg) scale(1.18)}
+  50%{transform:rotate(-45deg) scale(0.92)}
+  70%{transform:rotate(-45deg) scale(1.12)}
+  100%{transform:rotate(-45deg) scale(1)}
+}
+
+/* Green background hearts */
+.bg-hearts{position:absolute;inset:0;overflow:hidden;z-index:0}
+.bg-hearts .heart{
+  position:absolute;
+  width:24px;height:22px;
+  transform:rotate(-45deg);
+  opacity:0.9;
+  background:linear-gradient(180deg,#00ff88,#008844);
+  border-radius:6px 6px 0 0;
+  animation:float linear infinite;
+}
+.bg-hearts .heart:before,
+.bg-hearts .heart:after{
+  content:"";
+  position:absolute;
+  width:24px;height:24px;
+  background:inherit;
+  border-radius:50%;
+  top:-12px;left:0;
+}
+.bg-hearts .heart:after{left:12px}
+
+@keyframes float{
+  0%{transform:translateY(110vh) rotate(-45deg)}
+  100%{transform:translateY(-40vh) rotate(-45deg)}
+}
+
+.missu{
+  position:fixed;
+  top:10%;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:48px;
+  font-weight:900;
+  color:#ff3333;
+  opacity:0;
+  transition:0.4s;
+  text-shadow:0 0 20px #ff0000;
+}
+
+.missu.show{opacity:1}
