@@ -1,0 +1,10 @@
+
+body{margin:0;background:#000;height:100vh;display:flex;align-items:center;justify-content:center;color:white;font-family:Arial}
+.center{text-align:center;position:relative}
+.heart{width:300px;height:300px;background:pink;transform:rotate(-45deg);border-radius:20px;cursor:pointer;}
+.heart:before,.heart:after{content:"";position:absolute;width:300px;height:300px;background:pink;border-radius:50%}
+.heart:before{top:-150px;left:0}
+.heart:after{left:150px;top:0}
+.label{font-size:48px;margin-top:20px;font-weight:bold;text-shadow:0 0 20px #f0f}
+.missu{position:absolute;top:10%;left:50%;transform:translateX(-50%);font-size:50px;font-weight:bold;color:red;opacity:0;transition:0.4s}
+.missu.show{opacity:1}
